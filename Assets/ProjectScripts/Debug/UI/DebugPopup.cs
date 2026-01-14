@@ -2,6 +2,7 @@
 using ProjectScripts.Weapon.Bullet;
 using ProjectScripts.Weapon.General;
 using ProjectScripts.Weapon.Granade;
+using ProjectScripts.Weapon.Grenade;
 using Unity.Entities;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,8 +13,7 @@ namespace ProjectScripts.Debug.UI
     {
         public static DebugPopup Instance;
 
-        [SerializeField]
-        private Button closeButton;
+        [SerializeField] private Button closeButton;
 
         private EntityManager entityManager;
 
@@ -105,8 +105,8 @@ namespace ProjectScripts.Debug.UI
         {
             var enemySpawnData = entityManager.GetComponentData<EnemySpawnData>(enemySpawnEntity);
 
-            GUILayout.Label($"Enemy Spawn Rate: {enemySpawnData.SpawnRate}");
-            enemySpawnData.SpawnRate = GUILayout.HorizontalSlider(enemySpawnData.SpawnRate, 0.05f, 1f);
+            GUILayout.Label($"Enemy Spawn Rate: {enemySpawnData.SpawnCooldown}");
+            enemySpawnData.SpawnCooldown = GUILayout.HorizontalSlider(enemySpawnData.SpawnCooldown, 0.05f, 1f);
 
             GUILayout.Label($"Enemy Limit Count: {enemySpawnData.EnemyLimit}");
             enemySpawnData.EnemyLimit = (int)GUILayout.HorizontalSlider(enemySpawnData.EnemyLimit, 1, 1000);

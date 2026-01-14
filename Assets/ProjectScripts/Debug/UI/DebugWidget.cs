@@ -6,8 +6,7 @@ namespace ProjectScripts.Debug.UI
     [RequireComponent(typeof(Button))]
     public class DebugWidget : MonoBehaviour
     {
-        [SerializeField]
-        private Button targetButton;
+        [SerializeField] private Button targetButton;
         
         #if UNITY_EDITOR
         private void OnValidate()
