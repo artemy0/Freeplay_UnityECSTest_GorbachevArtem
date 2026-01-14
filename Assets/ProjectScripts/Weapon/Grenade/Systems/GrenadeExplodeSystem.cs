@@ -36,7 +36,7 @@ namespace ProjectScripts.Weapon.Grenade.Systems
                     var explosion = ecb.Instantiate(grenadeData.Explosion);
                     ecb.SetComponent(explosion, LocalTransform.FromPositionRotationScale(
                         new float3(moveState.ValueRO.End.x, 0f, moveState.ValueRO.End.z), quaternion.identity,
-                        grenadeData.AttackRange));
+                        grenadeData.AttackRange * 2));
 
                     // TODO Explode
                     var overlapHits = new NativeList<DistanceHit>(state.WorldUpdateAllocator);
