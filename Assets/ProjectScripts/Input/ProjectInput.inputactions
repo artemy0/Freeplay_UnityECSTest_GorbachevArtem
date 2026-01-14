@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "ProjectInput",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "8e76cf79-0cce-4d1a-9221-3f17fefb6223",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "a99f8b55-85e9-4a38-b6e6-e50e6d7d91d1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "de9d9c21-203c-4598-958b-f8b62f12171f",
+                    "path": "<AndroidJoystick>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
