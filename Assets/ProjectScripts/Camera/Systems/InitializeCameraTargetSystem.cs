@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ProjectScripts.Camera.Systems
 {
-    [UpdateInGroup(typeof(InitializationSystemGroup))]
+    [UpdateInGroup(typeof(CustomInitializationSystemGroup))]
     public partial struct InitializeCameraTargetSystem : ISystem
     {
         public void OnCreate(ref SystemState state)
