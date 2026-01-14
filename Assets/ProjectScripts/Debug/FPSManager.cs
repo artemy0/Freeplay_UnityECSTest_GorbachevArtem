@@ -6,7 +6,7 @@ namespace ProjectScripts.Debug
     {
         private void Awake()
         {
-#if !UNITY_EDITOR && ANDROID
+#if !UNITY_EDITOR
             Application.targetFrameRate = 60;
 #endif
         }
