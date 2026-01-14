@@ -7,7 +7,7 @@ APK: https://drive.google.com/file/d/11U0TLEK4WwQhV9dDWKGyU5RMFDPjtLz4/view?usp=
 
 # Игровой процесс
 <p align="center">
-  <img src="Assets/gameplay.gif" alt="gameplay" />
+  <img src="gameplay.gif" alt="gameplay" />
 </p>
 
 # Планы:
