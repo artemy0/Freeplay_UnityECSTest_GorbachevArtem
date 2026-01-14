@@ -1,0 +1,1 @@
+Straight forward Camera solution
