@@ -15,7 +15,7 @@ namespace ProjectScripts.Weapon.General.System
             {
                 var hitPosition = distanceHit.Position;
                 var distanceSq = math.distancesq(position.xz, hitPosition.xz);
-                
+
                 if (distanceSq < maxDistanceSq)
                 {
                     closestHitPosition = hitPosition;
@@ -25,7 +25,7 @@ namespace ProjectScripts.Weapon.General.System
 
             return closestHitPosition;
         }
-        
+
         public static float3 SpawnPosition(float3 fromPosition)
         {
             return fromPosition + math.up();

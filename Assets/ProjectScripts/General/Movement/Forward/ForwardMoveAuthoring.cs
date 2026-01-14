@@ -7,11 +7,11 @@ namespace ProjectScripts.General.Movement.Forward
     {
         public float MoveSpeed;
     }
-    
+
     public class ForwardMoveAuthoring : MonoBehaviour
     {
         public float MoveSpeed;
-        
+
         private class Baker : Baker<ForwardMoveAuthoring>
         {
             public override void Bake(ForwardMoveAuthoring authoring)

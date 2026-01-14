@@ -25,7 +25,7 @@ namespace ProjectScripts.General.Destroy
 
                     spawnerCurrentEntityCount.ValueRW.Value--;
                 }
-                
+
                 endECB.DestroyEntity(entity);
             }
         }

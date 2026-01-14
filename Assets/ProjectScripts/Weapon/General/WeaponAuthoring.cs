@@ -8,7 +8,7 @@ namespace ProjectScripts.Weapon.General
     public struct WeaponAttackData : IComponentData
     {
         public CollisionFilter AttackFilter;
-        
+
         public float AdditionalAttacksCooldown;
         public float AttackCooldown;
 
@@ -40,7 +40,7 @@ namespace ProjectScripts.Weapon.General
         public float AttackScale = 1f;
 
         public LayerMask AttackLayer;
-        
+
         public float AdditionalAttacksCooldown = 0.1f;
         public float AttackCooldown = 1f;
 
@@ -65,10 +65,10 @@ namespace ProjectScripts.Weapon.General
                 AddComponent(entity, new WeaponAttackData
                 {
                     AttackFilter = collisionFilter,
-                    
+
                     AdditionalAttacksCooldown = authoring.AdditionalAttacksCooldown,
                     AttackCooldown = authoring.AttackCooldown,
-                    
+
                     AttackRange = authoring.AttackRange,
                     AttackCount = authoring.AttackCount
                 });

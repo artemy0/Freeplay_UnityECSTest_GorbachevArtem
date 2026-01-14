@@ -4,7 +4,6 @@ using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Physics;
-using Unity.Physics.Systems;
 
 namespace ProjectScripts.Character.Enemy.Attack
 {
@@ -24,7 +23,7 @@ namespace ProjectScripts.Character.Enemy.Attack
                 PlayerLookup = SystemAPI.GetComponentLookup<PlayerTag>(true),
                 EnemyLookup = SystemAPI.GetComponentLookup<EnemyTag>(true),
                 EnemyAttackDataLookup = SystemAPI.GetComponentLookup<EnemyAttackData>(true),
-                
+
                 EnemyNextAttackTimeLookup = SystemAPI.GetComponentLookup<EnemyNextAttackTime>(),
                 DamageThisFrameLookup = SystemAPI.GetBufferLookup<DamageThisFrame>(),
                 ElapsedTime = SystemAPI.Time.ElapsedTime
@@ -77,7 +76,7 @@ namespace ProjectScripts.Character.Enemy.Attack
             }
 
             var enemyAttackData = EnemyAttackDataLookup[enemyEntity];
-            
+
             enemyNextAttackTime.Value = (float)ElapsedTime + enemyAttackData.Rate;
             EnemyNextAttackTimeLookup[enemyEntity] = enemyNextAttackTime;
 

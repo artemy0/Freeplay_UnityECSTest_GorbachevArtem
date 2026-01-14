@@ -7,7 +7,7 @@ namespace ProjectScripts.General.Spawn
     {
         public Entity SpawnerEntity;
     }
-    
+
     public class SpawnEntityAuthoring : MonoBehaviour
     {
         private class Baker : Baker<SpawnEntityAuthoring>

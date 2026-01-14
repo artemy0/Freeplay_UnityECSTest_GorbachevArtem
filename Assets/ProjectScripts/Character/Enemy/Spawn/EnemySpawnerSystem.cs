@@ -11,7 +11,7 @@ namespace ProjectScripts.Character.Enemy.Spawn
     public partial struct EnemySpawnerSystem : ISystem
     {
         // private EntityQuery enemyQuery;
-        
+
         public void OnCreate(ref SystemState state)
         {
             state.RequireForUpdate<PlayerTag>();
@@ -35,7 +35,7 @@ namespace ProjectScripts.Character.Enemy.Spawn
                      SystemAPI.Query<RefRW<EnemySpawnState>, RefRO<EnemySpawnData>, RefRW<SpawnerCurrentEntityCount>>().WithEntityAccess())
             {
                 spawnState.ValueRW.NextSpawnTime -= deltaTime;
-                
+
                 if (spawnState.ValueRO.NextSpawnTime > 0 ||
                     spawnCount.ValueRO.Value >= spawnData.ValueRO.EnemyLimit)
                 {

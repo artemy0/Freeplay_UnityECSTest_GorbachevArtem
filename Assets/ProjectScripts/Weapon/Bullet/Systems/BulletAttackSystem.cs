@@ -25,7 +25,7 @@ namespace ProjectScripts.Weapon.Bullet
             {
                 BulletLookup = SystemAPI.GetComponentLookup<BulletData>(true),
                 EnemyLookup = SystemAPI.GetComponentLookup<EnemyTag>(true),
-                TransformLookup =  SystemAPI.GetComponentLookup<LocalTransform>(true),
+                TransformLookup = SystemAPI.GetComponentLookup<LocalTransform>(true),
                 DamageBufferLookup = SystemAPI.GetBufferLookup<DamageThisFrame>(),
                 DamageReactionLookup = SystemAPI.GetBufferLookup<DamageReaction>(),
                 DestroyLookup = SystemAPI.GetComponentLookup<DestroyEntityFlag>(),
@@ -35,14 +35,14 @@ namespace ProjectScripts.Weapon.Bullet
             state.Dependency = attackJob.Schedule(simulationSystem, state.Dependency);
         }
     }
-    
+
     [BurstCompile]
     public struct BulletAttackJob : ITriggerEventsJob
     {
         [ReadOnly] public ComponentLookup<BulletData> BulletLookup;
         [ReadOnly] public ComponentLookup<EnemyTag> EnemyLookup;
         [ReadOnly] public ComponentLookup<LocalTransform> TransformLookup;
-        
+
         public BufferLookup<DamageThisFrame> DamageBufferLookup;
         public BufferLookup<DamageReaction> DamageReactionLookup;
         public ComponentLookup<DestroyEntityFlag> DestroyLookup;
@@ -70,9 +70,9 @@ namespace ProjectScripts.Weapon.Bullet
             var attackDamage = BulletLookup[bulletEntity].AttackDamage;
             var enemyDamageBuffer = DamageBufferLookup[enemyEntity];
             enemyDamageBuffer.Add(new DamageThisFrame
-                {
-                    Value = attackDamage
-                });
+            {
+                Value = attackDamage
+            });
 
             var attackPosition = TransformLookup[bulletEntity].Position;
             var enemyDamageReactionBuffer = DamageReactionLookup[enemyEntity];

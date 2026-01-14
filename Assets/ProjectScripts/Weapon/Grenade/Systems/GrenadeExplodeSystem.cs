@@ -1,7 +1,7 @@
 ﻿using ProjectScripts.Character.General.Damage;
 using ProjectScripts.General.DamageReaction;
 using ProjectScripts.General.Destroy;
-using ProjectScripts.Weapon.Granade;
+using ProjectScripts.General.Movement.Arc;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -18,7 +18,7 @@ namespace ProjectScripts.Weapon.Grenade.Systems
             state.RequireForUpdate<PhysicsWorldSingleton>();
             state.RequireForUpdate<BeginInitializationEntityCommandBufferSystem.Singleton>();
         }
-        
+
         public void OnUpdate(ref SystemState state)
         {
             var ecbSystem = SystemAPI.GetSingleton<BeginInitializationEntityCommandBufferSystem.Singleton>();

@@ -12,7 +12,7 @@ namespace ProjectScripts.General.DamageReaction.Graphics
         public void OnUpdate(ref SystemState state)
         {
             var deltaTime = SystemAPI.Time.DeltaTime;
-            
+
             foreach (var (timer, baseColorProperty, flashColorOnDamage, shouldFlash) in
                      SystemAPI.Query<RefRW<FlashColorOnDamageTimer>, RefRW<URPMaterialPropertyBaseColor>, FlashColorOnDamageData, EnabledRefRW<FlashColorOnDamageData>>())
             {

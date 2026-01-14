@@ -18,7 +18,7 @@ namespace ProjectScripts.General.DamageReaction
                 {
                     continue;
                 }
-                
+
                 var currentPosition = transform.ValueRO.Position;
 
                 var totalDirectionForce = float3.zero;
@@ -27,11 +27,12 @@ namespace ProjectScripts.General.DamageReaction
                     var directionForce = currentPosition - damageThisFrame.FromPosition;
                     totalDirectionForce += directionForce;
                 }
+
                 totalDirectionForce = math.normalizesafe(totalDirectionForce);
 
                 damageReactionBuffer.Clear();
-                
-                if(SystemAPI.HasComponent<FlashColorOnDamageData>(entity))
+
+                if (SystemAPI.HasComponent<FlashColorOnDamageData>(entity))
                 {
                     SystemAPI.SetComponentEnabled<FlashColorOnDamageData>(entity, true);
                     var flashColorOnDamageTimer = SystemAPI.GetComponentRW<FlashColorOnDamageTimer>(entity);

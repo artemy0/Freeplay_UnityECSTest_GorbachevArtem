@@ -7,13 +7,13 @@ namespace ProjectScripts.Debug.UI
     public class DebugWidget : MonoBehaviour
     {
         [SerializeField] private Button targetButton;
-        
-        #if UNITY_EDITOR
+
+#if UNITY_EDITOR
         private void OnValidate()
         {
             targetButton = GetComponent<Button>();
         }
-        #endif
+#endif
 
         private void Awake()
         {

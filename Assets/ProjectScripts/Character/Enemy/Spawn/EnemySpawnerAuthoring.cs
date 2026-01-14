@@ -27,10 +27,10 @@ namespace ProjectScripts.Character.Enemy.Spawn
     {
         public GameObject EnemyPrefab;
         public int EnemyLimit;
-        
+
         public float SpawnOffset;
         public float SpawnRange;
-        
+
         public float SpawnCooldown;
         public uint RandomSeed;
 

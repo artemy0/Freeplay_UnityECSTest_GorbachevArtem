@@ -1,5 +1,4 @@
-﻿using ProjectScripts.Weapon.Bullet;
-using Unity.Burst;
+﻿using Unity.Burst;
 using Unity.Entities;
 using Unity.Transforms;
 

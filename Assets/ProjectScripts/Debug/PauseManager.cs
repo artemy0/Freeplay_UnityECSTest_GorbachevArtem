@@ -12,7 +12,7 @@ namespace ProjectScripts.Debug
         public Action OnResumeGame;
 
         public bool IsPaused { get; private set; }
-        
+
         private void Awake()
         {
             if (Instance != null)
@@ -28,10 +28,10 @@ namespace ProjectScripts.Debug
         {
             var initializationSystemGroup = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<InitializationSystemGroup>();
             initializationSystemGroup.Enabled = false;
-            
+
             var simulationSystemGroup = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<SimulationSystemGroup>();
             simulationSystemGroup.Enabled = false;
-            
+
             OnPauseGame?.Invoke();
             IsPaused = true;
         }
@@ -40,10 +40,10 @@ namespace ProjectScripts.Debug
         {
             var initializationSystemGroup = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<InitializationSystemGroup>();
             initializationSystemGroup.Enabled = true;
-            
+
             var simulationSystemGroup = World.DefaultGameObjectInjectionWorld.GetExistingSystemManaged<SimulationSystemGroup>();
             simulationSystemGroup.Enabled = true;
-            
+
             OnResumeGame?.Invoke();
             IsPaused = false;
         }

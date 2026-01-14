@@ -1,7 +1,7 @@
 ﻿using ProjectScripts.Character.Player;
+using ProjectScripts.General.Movement.Arc;
 using ProjectScripts.Weapon.General;
 using ProjectScripts.Weapon.General.System;
-using ProjectScripts.Weapon.Granade;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -42,7 +42,7 @@ namespace ProjectScripts.Weapon.Grenade.Systems
                     var grenadeSpawnPosition = WeaponAttackExtensions.SpawnPosition(attackEvent.Origin);
                     var grenadeSpawnRotation = quaternion.identity;
                     var grenadeSpawnScale = attackPrefab.ValueRO.AttackScale;
-                    
+
                     ecb.SetComponent(grenadeEntity, LocalTransform.FromPositionRotationScale(grenadeSpawnPosition, grenadeSpawnRotation, grenadeSpawnScale));
                     ecb.SetComponent(grenadeEntity, new ArcMoveState
                     {
@@ -51,7 +51,7 @@ namespace ProjectScripts.Weapon.Grenade.Systems
                         End = attackEvent.Target
                     });
                 }
-                
+
                 attackEvents.Clear();
             }
         }

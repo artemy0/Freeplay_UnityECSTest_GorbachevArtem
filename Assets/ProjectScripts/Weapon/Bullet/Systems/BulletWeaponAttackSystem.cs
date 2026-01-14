@@ -30,7 +30,7 @@ namespace ProjectScripts.Weapon.Bullet
                 {
                     continue;
                 }
-                
+
                 foreach (var attackEvent in attackEvents)
                 {
                     var attackEntity = ecb.Instantiate(attackPrefab.ValueRO.AttackEntity);
@@ -41,7 +41,7 @@ namespace ProjectScripts.Weapon.Bullet
 
                     ecb.SetComponent(attackEntity, LocalTransform.FromPositionRotationScale(attackSpawnPosition, attackSpawnRotation, attackSpawnScale));
                 }
-                
+
                 attackEvents.Clear();
             }
         }

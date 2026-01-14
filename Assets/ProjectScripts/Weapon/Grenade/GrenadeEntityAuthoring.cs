@@ -1,5 +1,5 @@
 using ProjectScripts.General.Destroy;
-using ProjectScripts.Weapon.Granade;
+using ProjectScripts.General.Movement.Arc;
 using Unity.Entities;
 using Unity.Physics;
 using UnityEngine;
@@ -18,7 +18,7 @@ namespace ProjectScripts.Weapon.Grenade
         public float AttackRange;
         public int AttackDamage;
     }
-    
+
     [RequireComponent(typeof(DestructibleEntityAuthoring))]
     [RequireComponent(typeof(ArcMoveAuthoring))]
     public class GrenadeEntityAuthoring : MonoBehaviour
@@ -33,7 +33,7 @@ namespace ProjectScripts.Weapon.Grenade
             public override void Bake(GrenadeEntityAuthoring authoring)
             {
                 var entity = GetEntity(TransformUsageFlags.Dynamic);
-                
+
                 var belongsToLayerMask = 1u << authoring.gameObject.layer;
                 var collidesWithLayerMask = (uint)authoring.AttackLayer.value;
 

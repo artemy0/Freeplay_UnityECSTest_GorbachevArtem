@@ -33,13 +33,13 @@ namespace ProjectScripts.Weapon.General.System
                 {
                     continue;
                 }
-                
+
                 var overlapHits = new NativeList<DistanceHit>(state.WorldUpdateAllocator);
                 if (!physicsWorldSingleton.OverlapSphere(playerPosition, attackData.ValueRO.AttackRange, ref overlapHits, attackData.ValueRO.AttackFilter))
                 {
                     continue;
                 }
-                
+
                 var closestHitPosition = WeaponAttackExtensions.ClosestHitPosition(playerPosition, ref overlapHits);
 
                 attackBuffer.Add(new AttackEvent

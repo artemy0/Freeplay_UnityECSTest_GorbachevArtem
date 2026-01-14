@@ -9,19 +9,19 @@ namespace ProjectScripts.General.Movement.Arc
         public float Duration;
         public float Height;
     }
-    
+
     public struct ArcMoveState : IComponentData
     {
         public float Elapsed;
         public float3 Start;
         public float3 End;
     }
-    
+
     public class ArcMoveAuthoring : MonoBehaviour
     {
         public float Duration;
         public float Height;
-        
+
         private class Baker : Baker<ArcMoveAuthoring>
         {
             public override void Bake(ArcMoveAuthoring authoring)
